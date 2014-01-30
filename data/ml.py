@@ -1,6 +1,5 @@
 import cPickle
 import mysql.connector
-from mysql.connector import errorcode
 import dbUtils
 import os
 import hashlib
