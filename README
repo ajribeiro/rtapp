@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+This is the repository for the Forecasting Tomatoes web app.
+
+The purpose of this app is to predict the Rotten Tomatoes rating of movies based on external inputs.
+
+This was developed as a part of the Insight Data Science Fellowship (www.insightdatascience.com)
+
+
+=======
+rtapp
+=====
+
+Forecasting Tomatoes
+>>>>>>> 132a5c1fa58a827b8a5be855d6e58c3af17d5301

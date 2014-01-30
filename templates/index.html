@@ -1,0 +1,76 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script type="text/javascript" src='static/jquery/jquery-2.0.3.js'></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <link href="static/dist/css/typeahead.css" rel="stylesheet">
+        <script src="static/assets/typeahead.js"></script>
+        <script src="static/assets/waypoints.js"></script>
+        <link href="static/dist/css/navbar.css" rel="stylesheet">
+        <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+        <script src='static/assets/rtapp.js'></script>
+
+        <title>Forecasting Tomatoes</title>
+    </head>
+
+    <form id='myform' method='get' action='search_movie'>
+        <body style="">
+            <div class="container">
+                <!-- Static navbar -->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Forecasting Tomatoes</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="./">Existing Movie</a></li>
+                            <li><a href="new_movie">New Movie</a></li>
+                            <li><a href="http://slid.es/ajribeiro/forecastingtomatoes">About</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+
+                <!-- Main component for a primary marketing message or call to action -->
+                <div class="jumbotron">
+                    <h1>Forecasting Tomatoes</h1>
+                    <div class='example-countries'>
+                        <span class="twitter-typeahead" style="position: relative; display: inline-block; ">
+                            <input class="typeahead tt-query" type="text" placeholder="Enter a movie title" autocomplete="off" spellcheck="false" style="position: relative; vertical-align: top; background-color: transparent; " dir="auto" name='title' id='title'>
+                        </span>
+                    </div>
+
+                    <script>
+                        $('.example-countries .typeahead').typeahead({
+                          name: 'movielist',
+                          prefetch: 'static/movielist.json',
+                          limit: 10
+                        });
+                    </script>
+                    <p>
+                        <!-- <button type="button" class="btn btn-success" type='submit'>Calculate!</button> -->
+                        <input id='mybutton' class="btn btn-success" type='submit' value='Calculate!'>
+                    </p>
+
+                    <div class='posterlist' id='posterlist'>
+                        <p>
+                            <h2>Or, pick a movie!</h2>
+                        </p>
+                    </div>
+                </div>
+
+            </div> 
+
+        </body>
+    </form>
+</html>

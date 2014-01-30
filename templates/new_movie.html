@@ -1,0 +1,103 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script type="text/javascript" src='static/jquery/jquery-2.0.3.js'></script>
+        <script type="text/javascript"></script>
+        <script src='static/assets/rtapp.js'></script>
+        <script src="static/dist/js/bootstrap.min.js"></script>
+        <link href="static/dist/css/typeahead_new.css" rel="stylesheet">
+        <script src="static/assets/typeahead.js"></script>
+        <script src="static/assets/new_movie.js"></script>
+        <title>Forecasting Tomatoes</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="static/dist/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="static/dist/css/navbar.css" rel="stylesheet">
+
+    </head>
+
+    <body style="">
+
+        <div class="container">
+
+            <!-- Static navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Forecasting Tomatoes</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="./">Existing Movie</a></li>
+                        <li><a href="new_movie">New Movie</a></li>
+                            <li><a href="http://slid.es/ajribeiro/forecastingtomatoes">About</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <div class='director input'>
+                    <table width=720>
+                        <tr colspan=4>
+                            <td><b>Director</b></td>
+                        </tr>
+                        <tr colspan=4>
+                            <td style='width:300px;'>
+                                <div class='example-countries'>
+                                    <span class="twitter-typeahead" style="position: relative; display: inline-block; ">
+                                        <input class="typeahead tt-query directorname" type="text" placeholder="Director" autocomplete="off" spellcheck="false" style="position: relative; vertical-align: top; background-color: transparent; " dir="auto" name='title' id='title'>
+                                    </span>
+                                </div>
+                                <script>
+                                    $('.example-countries .typeahead').typeahead({
+                                      name: 'dirlist',
+                                      prefetch: 'static/directorlist.json',
+                                      limit: 10
+                                    });
+                                </script>
+                            </td>
+                            <td style='width:200px;'><b>Predicted Rating:</b></td>
+                            <td id='predrat' style='font-size:40px'>N/A</td>
+                            <td><img id='typeicon' src='http://7428.net/wp-content/uploads/2013/04/Question-Mark-Icon.png' width=30></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class='writer  input'>
+                    <table width=720 id='writertable'>
+                        <tbody id = 'writerbody'>
+                            <tr colspan=3>
+                                <td><b>Writer</b><img class='addicon' id='writeradd' width=25px src='/static/add.png'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class='actor input'>
+                    <table width=720 id='actortable'>
+                        <tbody id='actorbody'>
+                            <tr colspan=3>
+                                <td><b>Actor</b><img class='addicon' id='actoradd' width=25px src='/static/add.png'></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    <input id='mybutton' class="btn btn-success" type='submit' value='Calculate!'>
+                </p>
+
+            </div>
+        </div> 
+    </body>
+</html>
