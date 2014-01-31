@@ -65,7 +65,7 @@ def classify(title):
 
 def regress_cast(actors,writers,director):
 
-    with open('data/knnreg_backup.pkl', 'rb') as fid:
+    with open('data/knnreg.pkl', 'rb') as fid:
         clf = cPickle.load(fid)
 
     mydb = dbUtils.db_access('rottentomatoes', \
@@ -127,7 +127,7 @@ def regress_cast(actors,writers,director):
 
 def regress_title(title):
 
-    with open('data/knnreg_backup.pkl', 'rb') as fid:
+    with open('data/knnreg.pkl', 'rb') as fid:
         clf = cPickle.load(fid)
 
     mydb = dbUtils.db_access('rottentomatoes', \

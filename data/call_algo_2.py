@@ -9,14 +9,13 @@ from sklearn.feature_extraction import FeatureHasher, DictVectorizer
 with open('featurelist.pkl', 'rb') as fid:
     featurelist = cPickle.load(fid)
 
-
 with open('targets.pkl', 'rb') as fid:
     targets = cPickle.load(fid)
 
 with open('movielist.pkl', 'rb') as fid:
     mlist = cPickle.load(fid)
 
-with open('knnclass.pkl', 'rb') as fid:
+with open('knnreg_backup.pkl', 'rb') as fid:
     clf = cPickle.load(fid)
 
 training_files = {}

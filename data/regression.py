@@ -207,8 +207,8 @@ yy=[]
 
 f = plt.figure()
 
-nn=14
-for nn in range(5,20):
+nn=12
+for nn in range(nn,nn+1):
     clf = neighbors.KNeighborsRegressor(nn)
     clf.fit(x_train, y_train)
 

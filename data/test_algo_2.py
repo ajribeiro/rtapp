@@ -97,30 +97,25 @@ imdb_info_df = pd.DataFrame(imdb_info, \
 
 qry = "SELECT actor_id,imdb_id FROM casts;"
 actorlist = mydb.query(qry)
-casts_df = pd.DataFrame(actorlist, \
-    columns=['actor_id','imdb_id'])
+casts_df = pd.DataFrame(actorlist, columns=['actor_id','imdb_id'])
 
 qry = "SELECT actor_id,ratio,total FROM actor_stats;"
 actor_stats = mydb.query(qry)
-actor_stats_df = pd.DataFrame(actor_stats, \
-    columns=['actor_id','ratio','total'])
+actor_stats_df = pd.DataFrame(actor_stats, columns=['actor_id','ratio','total'])
 
 
 qry = "SELECT director,ratio,total FROM director_stats;"
 director_stats = mydb.query(qry)
-director_stats_df = pd.DataFrame(director_stats, \
-    columns=['director','ratio','total'])
+director_stats_df = pd.DataFrame(director_stats, columns=['director','ratio','total'])
 
 
 qry = "SELECT imdb_id,writer_id FROM writers;"
 writerlist = mydb.query(qry)
-writer_df = pd.DataFrame(writerlist, \
-    columns=['imdb_id','writer_id'])
+writer_df = pd.DataFrame(writerlist, columns=['imdb_id','writer_id'])
 
 qry = "SELECT writer_id,ratio,total FROM writer_stats;"
 writer_stats = mydb.query(qry)
-writer_stats_df = pd.DataFrame(writer_stats, \
-    columns=['writer_id','ratio','total'])
+writer_stats_df = pd.DataFrame(writer_stats, columns=['writer_id','ratio','total'])
 
 ids = []
 mlist = movielist.imdb_id.tolist()
@@ -131,6 +126,7 @@ for m in mlist:
     imdb_id = m
 
     rating = movielist[movielist.imdb_id == imdb_id].critic.values[0]
+    
     if rating < 0: continue
 
     allmovies.append(m)
@@ -447,18 +443,18 @@ clf_names, score, training_time, test_time = results
 training_time = np.array(training_time) / np.max(training_time)
 test_time = np.array(test_time) / np.max(test_time)
 
-pl.figure(figsize=(12,8))
-pl.title("Score")
-pl.barh(indices, score, .2, label="score", color='r')
-pl.barh(indices + .3, training_time, .2, label="training time", color='g')
-pl.barh(indices + .6, test_time, .2, label="test time", color='b')
-pl.yticks(())
-pl.legend(loc='best')
-pl.subplots_adjust(left=.25)
-pl.subplots_adjust(top=.95)
-pl.subplots_adjust(bottom=.05)
+# pl.figure(figsize=(12,8))
+# pl.title("Score")
+# pl.barh(indices, score, .2, label="score", color='r')
+# pl.barh(indices + .3, training_time, .2, label="training time", color='g')
+# pl.barh(indices + .6, test_time, .2, label="test time", color='b')
+# pl.yticks(())
+# pl.legend(loc='best')
+# pl.subplots_adjust(left=.25)
+# pl.subplots_adjust(top=.95)
+# pl.subplots_adjust(bottom=.05)
 
-for i, c in zip(indices, clf_names):
-        pl.text(-.3, i, c)
+# for i, c in zip(indices, clf_names):
+#         pl.text(-.3, i, c)
 
-pl.show()
+# pl.show()
