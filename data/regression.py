@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn import datasets, linear_model
 import cPickle
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 with open('featurelist.pkl', 'rb') as fid:
     featurelist = cPickle.load(fid)
@@ -205,7 +205,7 @@ xx=[]
 aa=[]
 yy=[]
 
-f = plt.figure()
+# f = plt.figure()
 
 nn=12
 for nn in range(nn,nn+1):
