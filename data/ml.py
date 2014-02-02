@@ -10,8 +10,8 @@ def classify(title):
     with open('data/perceptron.pkl', 'rb') as fid:
         clf = cPickle.load(fid)
 
-    mydb = dbUtils.db_access('rottentomatoes', \
-            os.environ['SQLUSER'],os.environ['SQLPASS'])
+    (user,pas) = dbUtils.get_user_pass()
+    mydb = dbUtils.db_access('rottentomatoes', user,pas)
 
     qry = "SELECT * FROM imdb_info as i inner join "
     qry += "rt_info as r on i.imdb_id = r.imdb_id "
@@ -68,10 +68,8 @@ def regress_cast(actors,writers,director):
     with open('data/knnreg.pkl', 'rb') as fid:
         clf = cPickle.load(fid)
 
-    mydb = dbUtils.db_access('rottentomatoes', \
-            os.environ['SQLUSER'],os.environ['SQLPASS'])
-
-    print director
+    (user,pas) = dbUtils.get_user_pass()
+    mydb = dbUtils.db_access('rottentomatoes', user,pas)
 
     qry = "SELECT ratio,total FROM director_stats WHERE "
     qry += "director = %s;" % ("\""+director+"\"")
@@ -130,8 +128,8 @@ def regress_title(title):
     with open('data/knnreg.pkl', 'rb') as fid:
         clf = cPickle.load(fid)
 
-    mydb = dbUtils.db_access('rottentomatoes', \
-            os.environ['SQLUSER'],os.environ['SQLPASS'])
+    (user,pas) = dbUtils.get_user_pass()
+    mydb = dbUtils.db_access('rottentomatoes', user,pas)
 
     qry = "SELECT * FROM imdb_info as i inner join "
     qry += "rt_info as r on i.imdb_id = r.imdb_id "

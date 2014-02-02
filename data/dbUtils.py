@@ -7,10 +7,20 @@ import urllib2
 from bs4 import BeautifulSoup
 from time import sleep
 
+def get_user_pass():
+    f=open('data/userpass.txt')
+    for line in f:
+        c=line.split(' ')
+        user,pas = c[0].strip(),c[1].strip()
+    f.close()
+    print (user,pas)
+    return (user,pas)
+
 class db_access(object):
     """Access database
     """
     def __init__(self, db_name, usr, pwd=None):
+        print 'in db_access'
         self.db_name = db_name
         self.db_url = "localhost"
         self.connect(usr, pwd)
