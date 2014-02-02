@@ -17,7 +17,8 @@ for m in movies:
     titles.append(m[1])
     indexes = [i for i, ltr in enumerate(m[13]) if ltr == '/']
     localname =  m[13][indexes[-1]+1:]
-    posters.append([m[1],'/static/posters/%s' % localname])
+    # posters.append([m[1],'/static/posters/%s' % localname])
+    posters.append([m[1],m[13]])
 
 with open('../static/movielist.json','w') as f:
     f.write(json.dumps(titles))

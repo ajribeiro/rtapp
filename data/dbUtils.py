@@ -237,9 +237,11 @@ def make_poster_list():
 
     for i in range(len(movieids)):
         p,t = movieids[i],titles[i]
+        print p
         indexes = [i for i, ltr in enumerate(p) if ltr == '/']
         localname =  p[indexes[-1]+1:]
-        posters.append([t,'static/posters/'+localname])
+        # posters.append([t,'static/posters/'+localname])
+        posters.append([t,p])
 
     f = open('../static/posterlist.json','w')
     f.write(json.dumps(posters))
