@@ -5551,7 +5551,7 @@ a.list-group-item.active > .badge,
     line-height: 2.1428571435;
     color: inherit;
     background-color: #eeeeee;
-    height: 1000px;
+    height: 100%;
     width:850px;
 }
 

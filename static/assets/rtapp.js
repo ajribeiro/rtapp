@@ -55,6 +55,7 @@ function load_more_posters(){
             "</a>"
         )
     }
+    $('.jumbotron').css('height',$(document).height())
     i += 3
 }
 
@@ -94,6 +95,7 @@ $.ajax({
             )
             posterlist.push('#'+titleid)
         }
+        $('.jumbotron').css('height',$(document).height())
         i += 3
     }
 });
