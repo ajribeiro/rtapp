@@ -20,7 +20,7 @@ function recalculate(dd){
             setTimeout(function(){
                 loadhtml = "<div id='load' class='loadingdiv'><img src='static/ajax-loader.gif'><p>Recalculating...</p></div>"
 
-                // $('body').append(loadhtml)
+                $('body').append(loadhtml)
                 color = '#333333'
 
                 value = $('#predrat')[0].innerHTML
@@ -43,7 +43,7 @@ function recalculate(dd){
                     $('#predicon')[0].innerHTML = "<img src='static/rotten.png'>"
                     $('#predtext')[0].innerHTML = 'Rotten!'
                 }
-                // $('#load').remove()
+                $('#load').remove()
             },0)
         }
     });
