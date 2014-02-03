@@ -67,39 +67,6 @@ jQuery(function($) {
 });
 
 
-
-$.ajax({
-    dataType: "json",
-    url: 'static/posterlist.json',
-    success: function(result){
-        viewheight = $(window).height()
-
-        for(var j=0; j<result.length; j++){
-            titlelist.push(result[j][0])
-            fileslist.push(result[j][1])
-        }
-        // fileslist = result;
-        $(window).scroll(function() {
-           if($(window).scrollTop() + viewheight >= $(document).height()) {
-              load_more_posters()
-            }
-        })
-        posterlist = []
-        for(var j=0; j<3; j++){
-            link = "\"/search_movie?title=";
-            link = link.concat(titlelist[j])
-            var titleid = titlelist[j].replace(/ /g,'').replace(/:/g,'').replace(/'/g,'')
-            $('#posterlist').append("<a href="+link+"\">"+
-                "<img id="+titleid+" src="+fileslist[j]+" class='movieposter' width='243px' height='350px' class='posimg'>"+
-                "</a>"
-            )
-            posterlist.push('#'+titleid)
-        }
-        $('.jumbotron').css('height',$(document).height())
-        i += 3
-    }
-});
-
 function load_actorlist(){
     $.ajax({
         dataType: 'json',

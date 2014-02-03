@@ -21,17 +21,18 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('#writeradd').click(function(){
         wrowcnt ++;
-    var writerhtml = "<td class='writername'><div class='example-writers"+wrowcnt.toString()+"'>"
-    writerhtml += "<span class='twitter-typeahead' style='position: relative; display: inline-block; '>"
-    writerhtml += "<input class='typeahead tt-query writername' type='text' placeholder='writer' "
-    writerhtml += "autocomplete='off' spellcheck='false' style='position: relative; vertical-align: top; background-color: transparent; ' dir='auto' name='title' id='title'>"
-    writerhtml += "</span></div></td>"
+        var writerhtml = "<td class='writername'><div class='example-writers"+wrowcnt.toString()+"'>"
+        writerhtml += "<span class='twitter-typeahead' style='position: relative; display: inline-block; '>"
+        writerhtml += "<input class='typeahead tt-query writername' type='text' placeholder='writer' "
+        writerhtml += "autocomplete='off' spellcheck='false' style='position: relative; vertical-align: top; background-color: transparent; ' dir='auto' name='title' id='title'>"
+        writerhtml += "</span></div></td>"
         $('#writerbody').append('<tr>')
         $('#writerbody').append(writerhtml)
         $('#writerbody').append(writerhtml)
         $('#writerbody').append(writerhtml)
         $('#writerbody').append('</tr>')
         setup_writer_fill(wrowcnt);
+        $('.jumbotron').css('height',$(document).height())
     })
 })
 
@@ -65,12 +66,13 @@ $(document).ready(function(){
         actorhtml += "<input class='typeahead tt-query actorname' type='text' placeholder='Actor' "
         actorhtml += "autocomplete='off' spellcheck='false' style='position: relative; vertical-align: top; background-color: transparent; ' dir='auto' name='title' id='title'>"
         actorhtml += "</span></div></td>"
-            $('#actorbody').append('<tr>')
-            $('#actorbody').append(actorhtml)
-            $('#actorbody').append(actorhtml)
-            $('#actorbody').append(actorhtml)
-            $('#actorbody').append('</tr>')
-            setup_actor_fill(arowcnt);
+        $('#actorbody').append('<tr>')
+        $('#actorbody').append(actorhtml)
+        $('#actorbody').append(actorhtml)
+        $('#actorbody').append(actorhtml)
+        $('#actorbody').append('</tr>')
+        setup_actor_fill(arowcnt);
+        $('.jumbotron').css('height',$(document).height())
     })
 })
 
