@@ -149,6 +149,9 @@
                                     var index = actors.indexOf(name);
                                     actors[index] = elem.innerText
                                     dd={'actors': actors,'director':director,'writers':writers,}
+                                    loadhtml = "<div id='load' class='loadingdiv'><img src='static/ajax-loader.gif'><p>Recalculating...</p></div>"
+
+                                    $('body').append(loadhtml)
                                     recalculate(dd)
 
                                 }
@@ -185,6 +188,9 @@
                                     var index = writers.indexOf(name);
                                     writers[index] = elem.innerText
                                     dd={'actors': actors,'director':director,'writers':writers,}
+                                    loadhtml = "<div id='load' class='loadingdiv'><img src='static/ajax-loader.gif'><p>Recalculating...</p></div>"
+
+                                    $('body').append(loadhtml)
                                     recalculate(dd)
 
                                 }
@@ -218,6 +224,9 @@
                                     var index = director.indexOf(name);
                                     director[index] = elem.innerText
                                     dd={'actors': actors,'director':director,'writers':writers,}
+                                    loadhtml = "<div id='load' class='loadingdiv'><img src='static/ajax-loader.gif'><p>Recalculating...</p></div>"
+
+                                    $('body').append(loadhtml)
                                     recalculate(dd)
                                 }
                                 else if(event.keyCode == 27){

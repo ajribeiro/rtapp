@@ -18,9 +18,6 @@ function recalculate(dd){
         dataType: 'json',
         success: function(result){
             setTimeout(function(){
-                loadhtml = "<div id='load' class='loadingdiv'><img src='static/ajax-loader.gif'><p>Recalculating...</p></div>"
-
-                $('body').append(loadhtml)
                 color = '#333333'
 
                 value = $('#predrat')[0].innerHTML
