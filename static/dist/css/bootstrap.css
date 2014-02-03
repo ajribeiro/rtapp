@@ -5544,6 +5544,7 @@ a.list-group-item.active > .badge,
 .jumbotron {
     position: relative;
     padding: 30px;
+    margin:0 auto;
     margin-bottom: 30px;
     font-size: 21px;
     font-weight: 200;
